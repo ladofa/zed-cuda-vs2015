@@ -1,0 +1,53 @@
+%YAML:1.0
+
+camera_resolution: 2
+#0:        RESOLUTION_HD2K,   /*!< 2208*1242, available framerates: 15 fps.*/
+#1:        RESOLUTION_HD1080, /*!< 1920*1080, available framerates: 15, 30 fps.*/
+#2:        RESOLUTION_HD720,  /*!< 1280*720, available framerates: 15, 30, 60 fps.*/
+#3:        RESOLUTION_VGA,    /*!< 672*376, available framerates: 15, 30, 60, 100 fps.*/
+#4:        RESOLUTION_LAST
+
+
+depth_mode: 1
+#0:        DEPTH_MODE_NONE,        /*!< This mode does not compute any depth map. Only rectified stereo images will be available.*/
+#1:        DEPTH_MODE_PERFORMANCE, /*!< Fastest mode for depth computation.*/
+#2:        DEPTH_MODE_MEDIUM,      /*!< Balanced quality mode. Depth map is robust in any environment and requires medium resources for computation.*/
+#3:        DEPTH_MODE_QUALITY,     /*!< Best quality mode. Requires more compute power.*/
+#4:        DEPTH_MODE_LAST
+
+
+coordinate_units: 2
+#0:        UNIT_MILLIMETER,
+#1:        UNIT_CENTIMETER,
+#2:        UNIT_METER,
+#3:        UNIT_INCH,
+#4:        UNIT_FOOT,
+#5:        UNIT_LAST
+
+
+coordinate_system: 2
+#0:        COORDINATE_SYSTEM_IMAGE,             /*!< Standard coordinates system in computer vision. Used in OpenCV : see here : http://docs.opencv.org/2.4/modules/calib3d/doc/camera_calibration_and_3d_reconstruction.html */
+#1:        COORDINATE_SYSTEM_LEFT_HANDED_Y_UP,  /*!< Left-Handed with Y up and Z forward. Used in Unity with DirectX. */
+#2:        COORDINATE_SYSTEM_RIGHT_HANDED_Y_UP, /*!< Right-Handed with Y pointing up and Z backward. Used in OpenGL. */
+#3:        COORDINATE_SYSTEM_RIGHT_HANDED_Z_UP, /*!< Right-Handed with Z pointing up and Y forward. Used in 3DSMax. */
+#4:        COORDINATE_SYSTEM_LEFT_HANDED_Z_UP,  /*!< Left-Handed with Z axis pointing up and X forward. Used in Unreal Engine. */
+#5:        COORDINATE_SYSTEM_LAST
+
+
+
+left_image : 0
+right_image : 1
+depth_image : 1
+#0일 경우 디스플레이/세이브에서 제외
+
+display : 1
+savefile : 0
+#속도를 위해 화면 디스플레이를 끄거나 파일저장을 하지 않을 수 있다.
+
+
+
+left_format : Debug/left_%.5d.jpg
+right_format : Debug/right_%.5d.jpg
+depth_format : Debug/depth_%.5d.jpg
+#sprintf 함수에 들어갈 문장. %d에 프레임 번호가 들어간다.
+#확장자를 바꿔주면 자동으로 파일 포맷이 바뀜
